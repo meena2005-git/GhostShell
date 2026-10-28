@@ -1,0 +1,325 @@
+
+/* GhostShell - Complete Dark Cyber Theme */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Courier New", monospace;
+  background: #080b12;
+  color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+h1 {
+  color: #4ade80;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  text-shadow: 0 0 18px #22c55e66;
+  letter-spacing: 3px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+p {
+  color: #9ca3af;
+  line-height: 1.8;
+}
+
+button {
+  padding: 14px 24px;
+  border: 1px solid #4ade80;
+  border-radius: 8px;
+  background: #102219;
+  color: #4ade80;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #4ade80;
+  color: #080b12;
+  box-shadow: 0 0 25px #22c55e55;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 8px #22c55e44; }
+  to { text-shadow: 0 0 25px #22c55eaa; }
+}
+
+@keyframes missionAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home screen */
+
+.home {
+  width: 100%;
+  max-width: 950px;
+  text-align: center;
+  padding: 24px 0;
+  animation: missionAppear 0.5s ease;
+}
+
+.home > h1 {
+  margin: 16px 0;
+}
+
+.home > p {
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+.status {
+  color: #4ade80;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: #a7f3d0;
+  font-size: 1.15rem;
+}
+
+#scoreDisplay {
+  color: #facc15;
+  font-weight: bold;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+  text-align: left;
+}
+
+.mission-card {
+  background: #0d111b;
+  border: 1px solid #263449;
+  border-radius: 14px;
+  padding: 24px;
+  transition: 0.25s ease;
+}
+
+.mission-card:hover {
+  border-color: #4ade80;
+  transform: translateY(-4px);
+}
+
+.mission-card h2 {
+  color: #4ade80;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+.mission-card h3 {
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+.mission-card p {
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.mission-card span {
+  color: #a78bfa;
+  font-size: 0.85rem;
+}
+
+.progress-area {
+  max-width: 500px;
+  margin: 24px auto;
+}
+
+.progress-track {
+  height: 10px;
+  margin: 10px 0;
+  background: #1f2937;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #4ade80;
+  transition: width 0.4s ease;
+}
+
+#startButton {
+  margin-top: 12px;
+}
+
+.footer-text {
+  margin-top: 30px !important;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* Mission screen */
+
+.mission {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #0d111b;
+  border: 1px solid #263449;
+  border-radius: 18px;
+  box-shadow: 0 0 40px #22c55e12;
+  animation: missionAppear 0.5s ease;
+}
+
+.mission h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.mission .status {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.terminal {
+  background: #05080d;
+  border: 1px solid #263449;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0 28px;
+  overflow-wrap: anywhere;
+  animation: terminalGlow 2s ease-in-out infinite alternate;
+}
+
+.terminal p {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.terminal .green {
+  color: #4ade80;
+}
+
+.terminal .red {
+  color: #fb7185;
+}
+
+@keyframes terminalGlow {
+  from { box-shadow: 0 0 5px #22c55e11; }
+  to { box-shadow: 0 0 18px #22c55e33; }
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.question h2 {
+  color: #c4b5fd;
+  font-size: 22px;
+}
+
+.question > p {
+  text-align: left;
+}
+
+.question .answer {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  background: #141c2b;
+  color: #e5e7eb;
+  border-color: #303e54;
+}
+
+.question .answer:hover:not(:disabled) {
+  background: #172a25;
+  color: #4ade80;
+  border-color: #4ade80;
+}
+
+#feedback {
+  min-height: 25px;
+  font-size: 14px;
+}
+
+#backButton {
+  align-self: flex-start;
+  background: transparent;
+  border-color: #64748b;
+  color: #cbd5e1;
+}
+
+#backButton:hover:not(:disabled) {
+  border-color: #a78bfa;
+  color: #c4b5fd;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 14px;
+  }
+
+  .mission {
+    padding: 18px;
+  }
+
+  .mission-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .terminal {
+    padding: 14px;
+  }
+
+  .terminal p {
+    font-size: 12px;
+  }
+
+  .question h2 {
+    font-size: 19px;
+  }
+
+  .question .answer {
+    font-size: 13px;
+  }
+
+  .footer-text {
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
